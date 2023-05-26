@@ -21,7 +21,6 @@ def send_email(message):
     with sl.SMTP_SSL(host, port, context=context) as server:
         server.login(username, password)
         server.sendmail(username, receiver, message)
-    print("Mail sent!")
 
 
 if __name__ == "__main__":

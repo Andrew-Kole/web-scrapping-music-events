@@ -1,6 +1,7 @@
 import dataExtract as de
 import processingTextFile as pt
 import sendingMail as sm
+import time
 
 URL = "http://programmer100.pythonanywhere.com/tours/"
 #app's behaviour will be as browser's
@@ -21,4 +22,6 @@ def process_function(url):
 
 
 if __name__ == "__main__":
-    process_function(URL)
+    while True:
+        process_function(URL)
+        time.sleep(3600)
