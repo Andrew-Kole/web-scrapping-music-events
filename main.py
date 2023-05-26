@@ -16,7 +16,8 @@ def process_function(url):
     if extracted != "No upcoming tours":
         if extracted not in content:
             pt.store(extracted)
-            sm.send_email()
+            message = "Hello, a new event was found" + ("\n" * 3) + extracted
+            sm.send_email(message)
 
 
 if __name__ == "__main__":
