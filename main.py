@@ -3,14 +3,12 @@ import processing_text_file
 import sending_mail as sm
 import db_processing
 import time
-import sqlite3
 
 URL = "http://programmer100.pythonanywhere.com/tours/"
 # app's behaviour will be as browser's
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1)'
                   ' AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
-# connection = sqlite3.connect("data.db")
 
 
 def process_function(url):

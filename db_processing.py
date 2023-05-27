@@ -1,6 +1,8 @@
 import sqlite3
 
 connection = sqlite3.connect("data.db")
+
+
 def db_data_generate(extracted):
     row = extracted.split(",")
     row = [item.strip() for item in row]
