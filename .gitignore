@@ -1,3 +1,9 @@
-venv
+venv/
 .idea
 .env
+example.py
+data.db
+files/
+data.sqbpro
+identifier.sqlite
+data.db-journal
