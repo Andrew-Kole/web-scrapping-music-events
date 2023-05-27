@@ -10,7 +10,7 @@ URL = "http://programmer100.pythonanywhere.com/tours/"
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1)'
                   ' AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
-connection = sqlite3.connect("data.db")
+# connection = sqlite3.connect("data.db")
 
 
 def process_function(url):
@@ -20,11 +20,11 @@ def process_function(url):
     print(extracted)
     if extracted != "No upcoming tours":
         content = processing_text_file.read()
-        row = db_processing.read_db(db_processing.db_data_generate(extracted), connection)
+        row = db_processing.read_db(db_processing.db_data_generate(extracted))
         print(row)
         if extracted not in content and not row:
             processing_text_file.store(extracted)
-            db_processing.store_db(db_processing.db_data_generate(extracted), connection)
+            db_processing.store_db(db_processing.db_data_generate(extracted))
             message = "Hello, a new event was found" + ("\n" * 3) + extracted
             sm.send_email(message)
             print("mail_sent")
